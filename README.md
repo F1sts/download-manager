@@ -82,7 +82,7 @@ py main.py
 ├── cache/                # Temporary chunk storage
 ├── downloads/            # Final downloaded files
 ├── download_history.log  # Log of past downloads
-├── downloader.py         # Main script
+├── main.py               # Main script
 └── requirements.txt      # Python dependencies
 ```
 
