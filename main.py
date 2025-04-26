@@ -164,7 +164,7 @@ def download_manager(url: str, num_threads: int):
         with progress:
             download_mode = f"{num_threads} threads" if num_threads > 1 else "single thread"
             console.print(f"⏳ | Downloading '[cyan]{filename}[/]' ({total_size / (1024*1024):.2f} MB) using {download_mode}[white]...[/]\n")
-            overall_task_id = progress.add_task("[bold #32cd32]Overall Progress[/]", total=total_size) # Added overall task
+            overall_task_id = progress.add_task("[bold #32cd32]Overall Progress[/]", total=total_size)
 
             for i in range(num_threads):
                 start_byte = i * chunk_size
@@ -179,7 +179,7 @@ def download_manager(url: str, num_threads: int):
 
                 thread = threading.Thread(
                     target=download_chunk,
-                    args=(url, start_byte, end_byte, chunk_filepath, i, progress, task_id, overall_task_id, total_size) # Pass total_size
+                    args=(url, start_byte, end_byte, chunk_filepath, i, progress, task_id, overall_task_id, total_size)
                 )
                 threads.append(thread)
                 thread.start()
